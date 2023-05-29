@@ -9,18 +9,20 @@ const favSlice = createSlice({
   
     reducers:{
 
-        addMovies: (state,action) => {
-       state.push(action.payload)
+      addMovies: (state,action) => {
+      //  state.push(action.payload)
+      const key = state.find((fav) =>  fav.imdbID === action.payload.imdbID)
+      if(!key){
+        state.push(action.payload)
+      }else{
+        alert("already added")
+      }
       
             
         },
 
         removeMovies :(state,action) => {
-        //  const a = console.log(state.filter((fav,i)=> fav.imdbId !== action.payload.imdbId));
-        //   state = a
-        if(state.length !== 0){
-        return ( state.filter((fav) =>  fav.imdbID !== action.payload.imdbID))
-        }
+         return state.filter((fav) =>  fav.imdbID !== action.payload.imdbID)
         
         },
 

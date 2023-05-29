@@ -27,7 +27,7 @@ function Faviorites() {
                         <img src={fav.Poster} alt="" />
                         
                     </div>
-                    <button onClick={() => {removeFromFav(ind)}}>remove</button>
+                    <button onClick={() => {removeFromFav(favgit)}}>remove</button>
                     </div>
                     </>
                 )
